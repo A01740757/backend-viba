@@ -1,0 +1,34 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Viba",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/login": {
+      "post": {
+        "summary": "Login de usuario",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Token generado" },
+          "401": { "description": "Credenciales inválidas" },
+          "404": { "description": "Usuario no encontrado" }
+        }
+      }
+    }
+  }
+}
